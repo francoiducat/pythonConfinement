@@ -3,8 +3,10 @@
  help(list)
  dir(__builtins__)
 
+ ctrl + l : clear python shell
 
- ## Types
+
+ # Types
 
 ### Integers are for representing whole numbers:
 
@@ -58,4 +60,78 @@ Documentation for a Python command can be found with:
 help(str)
 help(str.replace)
 help(dict.values)
+
+# Positive/Negative Indexes, Slicing
+
+Lists, strings, and tuples have a positive index system:
+
+["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+   0      1      2      3      4      5      6
+And a negative index system:
+
+["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+  -7     -6     -5     -4     -3     -2     -1
+In a list, the 2nd, 3rd, and 4th items can be accessed with:
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days[1:4]
+Output: ['Tue', 'Wed', 'Thu']
+First three items of a list:
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days[:3]
+Output:['Mon', 'Tue', 'Wed'] 
+Last three items of a list:
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days[-3:]
+Output: ['Fri', 'Sat', 'Sun']
+Everything but the last:
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days[:-1] 
+Output: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] 
+Everything but the last two:
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+days[:-2] 
+Output: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'] 
+A single in a dictionary can be accessed using its key:
+
+phone_numbers = {"John Smith":"+37682929928","Marry Simpons":"+423998200919"}
+phone_numbers["Marry Simpsons"]
+Output: '+423998200919'
+
+# Conditionals
+
+Using "and" and "or" in a Conditional
+You learned to check for one single condition:
+
+x = 1
+ 
+if x == 1:
+    print("Yes")
+else:
+    print("No")
+You can also check if two conditions are met at the same time using an and operator:
+
+x = 1
+y = 1
+ 
+if x == 1 and y==1:
+    print("Yes")
+else:
+    print("No")
+That will return Yes since x == 1 and y ==1 are both True.
+
+You can also check if one of two conditions are met using an or operator:
+
+x = 1
+y = 1
+ 
+if x == 1 or y==2:
+    print("Yes")
+else:
+    print("No")
+That will return Yes since at least one of the conditions is True. In this case x == 1 is True.
 
