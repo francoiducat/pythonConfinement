@@ -16,3 +16,26 @@ def lengther(lst):
 
 def area(square):
     return square*square
+
+
+def isIntInstance(x):
+    return isinstance(x, int)
+
+
+print('isIntInstance(3) is', isIntInstance(3))
+print('isIntInstance("3") is', isIntInstance('3'))
+
+# Ternary Operator
+
+
+def warmOrCold(temp):
+    return "Warm" if temp > 7 else "Cold"
+
+
+def HotWarmOrCold(temp):
+    if temp > 25:
+        return 'Hot'
+    elif 14 < temp < 26:
+        return 'Warm'
+    else:
+        return 'Cold'
