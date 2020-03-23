@@ -292,3 +292,219 @@ experience_years = 1.5
 print("Hi {}, you have {} years of experience".format(name, experience_years))
 ```
 Output: Hi Sim, you have 1.5 years of experience.
+
+# For Loop Over a Function
+
+#### Call any function multiple times, even your own functions.
+
+Let's suppose we defined this function:
+
+```python
+def celsius_to_kelvin(cels):
+    return cels + 273.15
+```
+
+That is a function that gets a number as input, adds 273.15 to it and returns the result.
+
+#### A for loop allows us to execute that function over a list of numbers
+
+```python
+monday_temperatures = [9.1, 8.8, -270.15]
+ 
+for temperature in monday_temperatures:
+    print(celsius_to_kelvin(temperature))
+```
+The output of that would be:
+
+- 282.25
+- 281.95
+- 3.0
+
+So, in the first iteration celsius_to_kelvin(9.1) was executed, in the second celsius_to_kelvin(8.8) and in the third celsius_to_kelvin(-270.15).
+
+# Dictionary Loop and String Formatting
+
+#### Combine a dictionary for loop with string formatting to create text containing information from the dictionary:
+
+```python
+phone_numbers = {"John Smith": "+37682929928", "Marry Simpons": "+423998200919"}
+ 
+for pair in phone_numbers.items():
+    print("{} has as phone number {}".format(pair[0], pair[1]))
+```
+
+Another (better) way to do it::
+
+```python
+phone_numbers = {"John Smith": "+37682929928", "Marry Simpons": "+423998200919"}
+ 
+for key, value in phone_numbers.items():
+    print("{} has as phone number {}".format(key, value))
+```
+In both cases the output is:
+- John Smith has as phone number +37682929928
+- Marry Simpons has as phone number +423998200919
+
+# Loops
+
+#### Loops are useful for executing a command over a large number of items.
+
+
+```python
+for letter in 'abc':
+    print(letter.upper())
+```
+Output:
+- A
+- B
+- C
+
+The name after for (e.g. letter) is just a variable name
+
+#### Loop over dictionary keys
+
+```python
+phone_numbers = {"John Smith":"+37682929928","Marry Simpons":"+423998200919"}
+for value in phone_numbers.keys():
+    print(value)
+```
+Output:
+- John Smith
+- Marry Simpsons
+
+#### Loop over dictionary values
+
+```python
+phone_numbers = {"John Smith":"+37682929928","Marry Simpons":"+423998200919"}
+for value in phone_numbers.values():
+    print(value)
+```
+Output:
+- +37682929928
+- +423998200919
+
+#### Loop over dictionary items
+
+```python
+phone_numbers = {"John Smith":"+37682929928","Marry Simpons":"+423998200919"}
+for key, value in phone_numbers.items():
+    print(key, value)
+```
+Output: 
+- ('John Smith', '+37682929928')
+- ('Marry Simpons', '+423998200919')
+
+#### While loops will run as long as a condition is true:
+
+```python
+while datetime.datetime.now() < datetime.datetime(2090, 8, 20, 19, 30, 20):
+    print("It's not yet 19:30:20 of 2090.8.20")
+```
+The loop above will print out the string inside print() over and over again until the 20th of August, 2090.
+
+# List Comprehensions
+
+A list comprehension is an expression that creates a list by iterating over another container.
+
+#### A basic list comprehension
+
+```python
+[i*2 for i in [1, 5, 10]]
+```
+Output: [2, 10, 20]
+
+#### List comprehension with if condition
+
+```python
+[i*2 for i in [1, -2, 10] if i>0]
+```
+Output: [2, 20]
+
+#### List comprehension with an if and else condition
+
+```python
+[i*2 if i>0 else 0 for i in [1, -2, 10]]
+```
+Output: [2, 0, 20]
+
+# More on Functions
+
+#### Functions can have more than one parameter
+
+```python
+def volume(a, b, c):
+    return a * b * c
+```
+
+#### Functions can have default parameters (e.g. coefficient)
+
+```python
+def converter(feet, coefficient = 3.2808):
+    meters = feet / coefficient
+    return meters
+ 
+print(converter(10))
+```
+Output: 3.0480370641306997
+
+### Arguments can be passed as non-keyword (positional) arguments (e.g. a) or keyword arguments (e.g. b=2 and c=10)
+
+```python
+def volume(a, b, c):
+    return a * b * c 
+print(volume(1, b=2, c=10))
+```
+
+### An *args parameter allows the  function to be called with an arbitrary number of non-keyword arguments
+
+```python
+def find_max(*args):
+    return max(args)
+print(find_max(3, 99, 1001, 2, 8))
+```
+Output: 1001
+
+#### An **kwargs parameter allows the function to be called with an arbitrary number of keyword arguments
+
+```python
+def find_winner(**kwargs):
+    return max(kwargs, key = kwargs.get)
+ 
+print(find_winner(Andy = 17, Marry = 19, Sim = 45, Kae = 34))
+```
+Output: Sim
+
+#### Summary of function elements:
+
+![](/assets/img/functionsPython.png)
+
+# File Processing
+
+#### Read an existing file with Python
+
+```python
+with open("file.txt") as file:
+    content = file.read()
+```
+#### Create a new file with Python and write some text on it
+
+```python
+with open("file.txt", "w") as file:
+    content = file.write("Sample text")
+```
+
+#### Append text to an existing file without overwriting it
+
+```python
+with open("file.txt", "a") as file:
+    content = file.write("More sample text")
+```
+
+#### Both append and read a file with
+
+```python
+with open("file.txt", "a+") as file:
+    content = file.write("Even more sample text")
+    file.seek(0)
+    content = file.read()
+```

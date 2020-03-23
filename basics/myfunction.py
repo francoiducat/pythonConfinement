@@ -39,3 +39,21 @@ def HotWarmOrCold(temp):
         return 'Warm'
     else:
         return 'Cold'
+
+
+def process(*args):
+    return sorted([value.upper() for value in args])
+
+
+def keyWordArgs(**kwargs):
+    return kwargs
+
+
+print(keyWordArgs(a=1, b=2, c=3))
+
+
+def find_sum(**kwargs):
+    return sum(kwargs.values())
+
+
+print(find_sum(a=1, b=8))
