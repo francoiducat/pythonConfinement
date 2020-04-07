@@ -1,7 +1,7 @@
  # General Commands
 
- ctrl + l : clear python shell
- exi() : exit python shell
+ - ctrl + l : clear python shell
+ - exit() : exit python shell
 
 # Types
 
