@@ -51,3 +51,9 @@ while True:
         break
     else:
         continue
+
+# Iterating over 2 list with built in zip function
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 9, 10]
+for a, b in zip(list1, list2):
+    print(a, b)
