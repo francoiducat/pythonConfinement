@@ -2,6 +2,7 @@
 
  - ctrl + l : clear python shell
  - exit() : exit python shell
+ - python3 my_python_script.py : run a python script (for osx users)
 
 # Types
 
